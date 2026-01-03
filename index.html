@@ -12,23 +12,14 @@
   <!-- Convocorre Container -->
   <div id="VG_OVERLAY_CONTAINER" style="width: 500px; height: 600px; position: fixed; bottom: 20px; right: 20px;"></div>
 
-  <!-- Voiceflow Widget -->
-  <script type="text/javascript">
-    (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-            window.voiceflow.chat.load({
-                verify: { projectID: '6958539d54ef746693b568ab' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production',
-                voice: { url: "https://runtime-api.voiceflow.com" },
-                container: "#VG_OVERLAY_CONTAINER" // Load into Convocorre container
-            });
-        }
-        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
-        v.type = "text/javascript"; 
-        s.parentNode.insertBefore(v, s);
-    })(document, 'script');
+  <!-- Legacy Voiceflow Widget -->
+  <script src="https://cdn.voiceflow.com/widget/bundle.js"></script>
+  <script>
+    window.voiceflowWidget.init({
+      versionID: "6958539d54ef746693b568ab", // Your project ID
+      apiKey: "VF.DM.695874a87f92756db99f91f0.RBSidvlAA674R67x",                 // Replace with your Voiceflow API key
+      container: "#VG_OVERLAY_CONTAINER"     // Loads inside Convocorre container
+    });
   </script>
 </body>
 </html>
