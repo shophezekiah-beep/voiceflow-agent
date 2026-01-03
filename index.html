@@ -1,16 +1,34 @@
-<script type="text/javascript">
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '6958539d54ef746693b568ab' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production',
-          voice: {
-            url: "https://runtime-api.voiceflow.com"
-          }
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voiceflow + Convocorre Agent</title>
+
+  <!-- Convocorre Styles -->
+  <link rel="stylesheet" href="https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css">
+</head>
+<body>
+  <!-- Convocorre Container -->
+  <div id="VG_OVERLAY_CONTAINER" style="width: 500px; height: 600px; position: fixed; bottom: 20px; right: 20px;"></div>
+
+  <!-- Voiceflow Widget -->
+  <script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: '6958539d54ef746693b568ab' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                voice: { url: "https://runtime-api.voiceflow.com" },
+                container: "#VG_OVERLAY_CONTAINER" // Load into Convocorre container
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+</body>
+</html>
